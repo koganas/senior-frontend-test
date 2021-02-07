@@ -7,7 +7,13 @@
 		<div class="flex flex-col w-80 items-center">
 			<h1 class="mb-2 text-6xl font-light text-greenTurq">Offices</h1>
 
-			<!-- TODO: OfficeNew and OfficeCard -->
+			<OfficeNew />
+
+			<OfficeCard
+				v-for="office in offices"
+				:key="office.id"
+				:office="office"
+			/>
 
 			<footer class="mt-6 text-center">
 				<p class="text-gray-500 font-light">
@@ -29,6 +35,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
 	name: 'Home',
 	layout: 'default',
@@ -36,6 +44,9 @@ export default {
 		return {}
 	},
 	computed: {
+		...mapState({
+			offices: (state) => state.officeList
+		})
 	},
 	head() {
 		return {

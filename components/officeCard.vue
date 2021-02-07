@@ -15,6 +15,13 @@
 				@editing="isEditing = true"
 			/>
 		</div>
+
+		<OfficeForm
+			v-if="isEditing"
+			:office="office"
+			:open="isEditing"
+			@close="isEditing = false"
+		/>
 	</div>
 </template>
 
@@ -30,8 +37,8 @@ export default {
 	},
 	data: () => {
 		return {
-			isEditing: false,
-			isExpanded: false
+			isExpanded: false,
+			isEditing: false
 		}
 	}
 }
