@@ -36,6 +36,13 @@ module.exports = {
 				fit: '500px',
 				0: '0'
 			},
+			maxWidth: {
+				fit: '250px',
+				0: '0'
+			},
+			inset: {
+				35: '35px'
+			},
 			transitionProperty: {
 				maxHeight: 'max-height'
 			},

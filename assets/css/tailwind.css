@@ -18,4 +18,22 @@
   .btn-icon {
     @apply flex items-center text-xs uppercase py-2 px-1
   }
+  
+  .input-group {
+    @apply block relative w-full mb-6
+  }
+  
+  .label {
+    @apply block w-full mt-2
+  }
+  
+  .text {
+    @apply w-full px-3 py-2 text-base border rounded shadow
+  }
+  
+  .text:focus,
+  .btn-icon,
+  .btn-icon:focus {
+    @apply outline-none
+  }
 }
