@@ -33,7 +33,7 @@ export const actions = {
 		let list = []
 		if (data.id) {
 			const index = state.officeList.findIndex(
-				office => office.id === data.id
+				(office) => office.id === data.id
 			)
 			list = JSON.parse(JSON.stringify(state.officeList))
 			list[index] = data
@@ -56,7 +56,7 @@ export const actions = {
 
 	deleteStore({ state, commit }, officeId) {
 		const updatedList = state.officeList.filter(
-			office => office.id !== officeId
+			(office) => office.id !== officeId
 		)
 		commit('SET_OFFICES', updatedList)
 

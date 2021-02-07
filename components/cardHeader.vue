@@ -28,7 +28,14 @@
 			</address>
 		</header>
 
-		<!-- TODO: icon component -->
+		<Icon
+			name="chevron"
+			class="transition-all duration-500 transform"
+			:class="{
+				'text-greenTurq': !open,
+				'text-white -rotate-180': open
+			}"
+		/>
 	</div>
 </template>
 

@@ -28,7 +28,7 @@
 					@click.prevent="$emit('editing')"
 					class="btn-icon text-grayLight hover:text-gray-700"
 				>
-					<!-- TODO: icon component -->
+					<Icon name="pencil" class="mr-2" />
 					Edit
 				</button>
 
@@ -36,7 +36,7 @@
 					@click.prevent="deleteOffice()"
 					class="btn-icon text-pinkPanther hover:text-red-500"
 				>
-					<!-- TODO: icon component -->
+					<Icon name="trash" class="mr-2" />
 					Delete
 				</button>
 			</div>
