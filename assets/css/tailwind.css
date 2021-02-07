@@ -1,0 +1,21 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer components {
+  .btn, .btn-icon {
+    @apply transition duration-200
+  }
+  
+  .btn {
+    @apply rounded px-6 py-2 text-white
+  }
+  
+  .btn[disabled] {
+    @apply bg-gray-400
+  }
+  
+  .btn-icon {
+    @apply flex items-center text-xs uppercase py-2 px-1
+  }
+}
