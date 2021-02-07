@@ -10,14 +10,14 @@ export default {
 	filters: {},
 	props: {},
 	data: () => {
-		return {};
+		return {}
 	},
 	computed: {},
 	watch: {},
 	created() {},
 	mounted() {},
-	methods: {},
-};
+	methods: {}
+}
 </script>
 
 <style></style>

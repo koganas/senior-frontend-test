@@ -13,7 +13,7 @@ export default {
 	async fetch() {},
 	async asyncData() {},
 	data: () => {
-		return {};
+		return {}
 	},
 	computed: {},
 	watch: {},
@@ -27,12 +27,12 @@ export default {
 				{
 					hid: '',
 					name: '',
-					content: '',
-				},
-			],
-		};
-	},
-};
+					content: ''
+				}
+			]
+		}
+	}
+}
 </script>
 
 <style></style>
