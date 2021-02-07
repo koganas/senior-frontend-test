@@ -3,4 +3,7 @@ node_modules
 
 # IDE
 .idea
+
+# Build/dev files
 .nuxt
+yarn.lock

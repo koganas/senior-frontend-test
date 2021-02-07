@@ -5,14 +5,14 @@
 <script>
 //import {  } from '';
 export default {
-	name: "",
-	layout: "default",
+	name: '',
+	layout: 'default',
 	components: {},
 	filters: {},
 	props: {},
 	async fetch() {},
 	async asyncData() {},
-	data: function () {
+	data: () => {
 		return {};
 	},
 	computed: {},
@@ -22,12 +22,12 @@ export default {
 	methods: {},
 	head() {
 		return {
-			title: "",
+			title: '',
 			meta: [
 				{
-					hid: "",
-					name: "",
-					content: "",
+					hid: '',
+					name: '',
+					content: '',
 				},
 			],
 		};

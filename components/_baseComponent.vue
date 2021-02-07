@@ -5,11 +5,11 @@
 <script>
 //import {  } from '';
 export default {
-	name: "",
+	name: '',
 	components: {},
 	filters: {},
 	props: {},
-	data: function () {
+	data: () => {
 		return {};
 	},
 	computed: {},
