@@ -1,10 +1,9 @@
 <template>
-	<div class="transition-all duration-500 relative w-full min-h-26 mt-6 shadow-m">
+	<div
+		class="transition-all duration-500 relative w-full min-h-26 mt-6 shadow-m"
+	>
 		<Fade>
-			<div
-				v-if="!isEditing"
-				class="relative w-full"
-			>
+			<div v-if="!isEditing" class="relative w-full">
 				<CardHeader
 					:office="office"
 					:open="isExpanded"
@@ -17,7 +16,7 @@
 					@editing="isEditing = true"
 				/>
 			</div>
-			
+
 			<OfficeForm
 				v-if="isEditing"
 				:office="office"
@@ -36,7 +35,7 @@ export default {
 			type: Object,
 			required: true,
 			default: () => {}
-    }
+		}
 	},
 	data: () => {
 		return {
