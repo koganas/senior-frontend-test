@@ -1,4 +1,4 @@
-import { officeList } from '@/assets/data/officeList.js'
+import { officeList } from '@/constants/officeList.js'
 
 export const state = () => ({
 	officeList,

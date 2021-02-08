@@ -5,7 +5,7 @@
 		<AlertStatus />
 
 		<div class="flex flex-col w-80 items-center">
-			<h1 class="mb-2 text-6xl font-light text-greenTurq">Offices</h1>
+			<h1 class="mb-6 text-6xl font-light text-greenTurq">Offices</h1>
 			<OfficeNew />
 
 			<OfficeCard

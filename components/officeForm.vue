@@ -2,8 +2,8 @@
 	<form
 		@submit.prevent="onSubmit"
 		@keydown.enter.prevent.self="onSubmit"
-		novalidate
 		class="w-full bg-white rounded-lg shadow-md text-grayDark px-6 pt-4 pb-6"
+		novalidate
 	>
 		<header class="flex justify-between mb-10">
 			<span class="font-bold"
@@ -79,7 +79,11 @@
 		<button
 			type="submit"
 			class="btn font-light feedback"
-			:class="isValid() ? 'bg-greenTurq' : 'bg-gray-400'"
+			:class="
+				isValid() && !isNew
+					? 'bg-greenTurq'
+					: 'bg-gray-400 feedback-error'
+			"
 		>
 			Save
 		</button>
@@ -116,7 +120,8 @@ export default {
 					phone: ''
 				}
 			},
-			isSubmitted: false
+			isSubmitted: false,
+			isNew: true
 		}
 	},
 	computed: {
@@ -126,12 +131,19 @@ export default {
 	},
 	created() {
 		if (this.isEditing) {
+			this.isNew = false
 			this.form = {
 				...this.office,
 				contact: {
 					...this.office.contact
 				}
 			}
+		}
+	},
+	mounted() {
+		if (!this.isEditing) {
+			this.$refs.title.$el.focus()
+			this.isNew = false
 		}
 	},
 	methods: {

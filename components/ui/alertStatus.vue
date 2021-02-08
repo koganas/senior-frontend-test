@@ -4,7 +4,7 @@
 			v-if="alert && alert.show"
 			class="fixed w-full top-0 py-6 z-50 border-t-2 bg-white border-greenTurq shadow-sm"
 		>
-			<div class="flex w-80 m-auto px-4">
+			<div class="flex justify-center w-80 m-auto px-4">
 				<Icon name="check" class="mr-4 text-greenTurq" />
 				<p class="uppercase text-xs leading-6 text-grayDark">
 					{{ alert.status }}
@@ -14,7 +14,7 @@
 					@click.prevent="hideAlert()"
 					class="fixed right-0 mr-6 text-grayLight feedback-color"
 				>
-					<Icon name="close" class="text-grayLight" />
+					<Icon name="close" />
 				</button>
 			</div>
 		</div>
