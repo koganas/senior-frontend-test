@@ -18,6 +18,7 @@ module.exports = {
 				grayLight: '#989ea7',
 				grayDark: '#323e4f',
 				greenTurq: '#34a6bb',
+				greenTurqLight: '#4bb9ce',
 				pinkPanther: '#ff7b92'
 			},
 			spacing: {
@@ -46,6 +47,12 @@ module.exports = {
 			padding: {
 				1.6: '0.407rem'
 			},
+			outline: {
+				greenTurq: ['1px solid #34a6bb', '1px'],
+			},
+			opacity: {
+				60: '60%'
+			},
 			transitionProperty: {
 				maxHeight: 'max-height'
 			}
@@ -64,12 +71,13 @@ module.exports = {
 				'bg-grayLight',
 				'bg-grayDark',
 				'bg-greenTurq',
+				'bg-greenTurqLight',
 				'bg-pinkPanther',
 				'text-grayLight',
 				'text-grayDark',
 				'text-greenTurq',
-				'text-pinkPanther',
-				'tk-proxima-nova'
+				'text-greenTurqLight',
+				'text-pinkPanther'
 			]
 		}
 	}

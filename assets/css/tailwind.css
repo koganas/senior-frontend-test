@@ -3,7 +3,7 @@
 @import 'tailwindcss/utilities';
 
 @layer components {
-  .btn, .btn-icon {
+  .btn, .btn-icon, .feedback {
     @apply transition duration-200
   }
   
@@ -31,9 +31,29 @@
     @apply w-full px-3 py-2 text-sm border rounded shadow
   }
   
-  .input:focus,
+  .btn,
   .btn-icon,
-  .btn-icon:focus {
+  .btn-icon:focus,
+  .input:focus,
+  .feedback:focus {
     @apply outline-none
+  }
+
+  .feedback { 
+    &:hover,
+    &:focus,
+    &:active {
+      @apply bg-greenTurqLight
+    }
+  }
+  .feedback-color {
+    &:hover,
+    &:focus,
+    &:active {
+      @apply text-greenTurqLight outline-none
+    }
+  }
+  .feedback-bounce:focus .ico {
+    @apply animate-bounce
   }
 }

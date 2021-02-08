@@ -1,7 +1,7 @@
 <template>
 	<div
 		:class="{
-			'transition-maxHeight duration-500 ease-in-out relative h-auto w-full overflow-y-hidden z-10 -mt-4 bg-white px-8 rounded-lg shadow-md': true,
+			'transition-maxHeight duration-500 ease-in-out relative h-auto w-full overflow-y-hidden -mt-4 bg-white px-8 rounded-lg shadow-md': true,
 			'max-h-0': !open,
 			'max-h-fit': open
 		}"

@@ -1,16 +1,16 @@
 <template>
 	<form
 		@submit.prevent="onSubmit"
-		@keydown.enter.prevent.self=""
+		@keydown.enter.prevent.self="onSubmit"
 		novalidate
-		class="w-full bg-white rounded-lg shadow-md text-grayDark px-6 pt-4 pb-6 z-30"
+		class="w-full bg-white rounded-lg shadow-md text-grayDark px-6 pt-4 pb-6"
 	>
 		<header class="flex justify-between mb-10">
 			<span class="font-bold"
 				>{{ isEditing ? 'Edit' : 'New' }} Location</span
 			>
-			<button @click.prevent="$emit('close')">
-				<Icon name="close" class="text-grayLight" />
+			<button @click.prevent="$emit('close')" class="text-grayLight feedback-color">
+				<Icon name="close"/>
 			</button>
 		</header>
 
@@ -67,7 +67,7 @@
 			label="Phone"
 			v-model="form.contact.phone"
 			ref="phone"
-			placeholder="(XXX) XXX-XXXX"
+			placeholder="(xxx) xxx-xxxx"
 			input-mask="(###) ###-####"
 			:required="true"
 			:error="isSubmitted"
@@ -75,7 +75,7 @@
 
 		<button
 			type="submit"
-			class="btn font-light"
+			class="btn font-light feedback"
 			:class="isValid() ? 'bg-greenTurq' : 'bg-gray-400'"
 		>
 			Save
