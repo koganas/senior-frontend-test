@@ -9,8 +9,11 @@
 			<span class="font-bold"
 				>{{ isEditing ? 'Edit' : 'New' }} Location</span
 			>
-			<button @click.prevent="$emit('close')" class="text-grayLight feedback-color">
-				<Icon name="close"/>
+			<button
+				@click.prevent="$emit('close')"
+				class="text-grayLight feedback-color"
+			>
+				<Icon name="close" />
 			</button>
 		</header>
 

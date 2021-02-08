@@ -7,7 +7,7 @@
 				class="flex justify-between w-full bg-greenTurq px-6 py-4 text-white font-thin rounded-lg shadow-lg feedback"
 			>
 				Add New Location
-				<Icon name="plus"/>
+				<Icon name="plus" />
 			</button>
 			<OfficeForm v-else :open="isAdding" @close="isAdding = false" />
 		</Fade>

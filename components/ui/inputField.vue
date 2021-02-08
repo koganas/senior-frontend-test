@@ -19,16 +19,17 @@
 			@input="$emit('input', $event.target.value)"
 			v-mask="inputMask"
 		/>
-		<p v-if="showError" class="text-xs text-pinkPanther mt-1">
-			{{ message }}
-		</p>
-		<Icon
-			v-if="showError"
-			name="error"
-			size="small"
-			fill
-			class="absolute right-0 top-icon mr-2 text-pinkPanther pointer-events-none"
-		/>
+		<template v-if="showError">
+			<p class="text-xs text-pinkPanther mt-1">
+				{{ message }}
+			</p>
+			<Icon
+				name="error"
+				size="small"
+				fill
+				class="absolute right-0 top-icon mr-2 text-pinkPanther pointer-events-none"
+			/>
+		</template>
 	</label>
 </template>
 
@@ -94,11 +95,11 @@ export default {
 			const ERROR = [
 				{
 					code: 'required',
-					message: `${fieldName} cannot be empty`,
+					message: `${fieldName} cannot be empty`
 				},
 				{
 					code: 'invalid',
-					message: `${fieldName} is not valid`,
+					message: `${fieldName} is not valid`
 				},
 				{
 					code: 'incomplete',
@@ -108,7 +109,7 @@ export default {
 				}
 			]
 
-			let errorIndex = ERROR.findIndex(err => err.code === errorType)
+			let errorIndex = ERROR.findIndex((err) => err.code === errorType)
 			this.message = ERROR[errorIndex].message
 		}
 	}

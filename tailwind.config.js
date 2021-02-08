@@ -42,13 +42,13 @@ module.exports = {
 				0: '0'
 			},
 			inset: {
-				'icon': '2.3rem'
+				icon: '2.3rem'
 			},
 			padding: {
 				1.6: '0.407rem'
 			},
 			outline: {
-				greenTurq: ['1px solid #34a6bb', '1px'],
+				greenTurq: ['1px solid #34a6bb', '1px']
 			},
 			opacity: {
 				60: '60%'

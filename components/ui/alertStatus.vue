@@ -10,7 +10,10 @@
 					{{ alert.status }}
 				</p>
 
-				<button @click.prevent="hideAlert()" class="fixed right-0 mr-6 text-grayLight feedback-color">
+				<button
+					@click.prevent="hideAlert()"
+					class="fixed right-0 mr-6 text-grayLight feedback-color"
+				>
 					<Icon name="close" class="text-grayLight" />
 				</button>
 			</div>
