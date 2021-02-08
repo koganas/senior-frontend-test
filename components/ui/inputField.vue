@@ -1,52 +1,64 @@
 <template>
 	<label class="input-group">
-		{{ label }}
-		<span v-if="required" class="label text-grayLight inline">*</span>
-
+		<p class="label">
+			{{ label }}
+			<span v-if="required" class="text-grayLight">*</span>
+		</p>
 		<input
 			:type="type"
 			:placeholder="placeholder"
 			:value="value"
-			class="transition-all duration-200 text border-grayDark outline-none"
+			:id="label"
 			:ref="label"
+			class="transition-all duration-200 input border-grayDark outline-none"
 			:class="{
-				'border-pinkPanther': hasError,
-				'focus:border-greenTurq': hasError
+				'focus:border-greenTurq': !hasError || !value,
+				'border-pinkPanther': showError,
+				'text-base py-1.6': label === 'Title'
 			}"
 			@input="$emit('input', $event.target.value)"
+			v-mask="inputMask"
 		/>
-		<p v-if="hasError" class="mt-1 text-xs text-pinkPanther">
+		<p v-if="showError" class="text-xs text-pinkPanther mt-1">
 			{{ message }}
 		</p>
 		<Icon
-			v-if="hasError"
+			v-if="showError"
 			name="error"
 			size="small"
 			fill
-			class="absolute right-0 top-35 mr-2 text-pinkPanther"
+			class="absolute right-0 top-icon mr-2 text-pinkPanther pointer-events-none"
 		/>
 	</label>
 </template>
 
 <script>
+import { validateEmail, theMask as _mask } from '@/helpers/validation'
+
 export default {
 	name: 'InputField',
+	directives: {
+		mask: _mask
+	},
 	props: {
+		value: String,
+		label: String,
+		placeholder: String,
 		type: {
 			type: String,
 			default: 'text'
 		},
-		value: String,
-		label: String,
-		placeholder: String,
 		error: {
 			type: Boolean,
 			default: false
 		},
 		required: {
 			type: Boolean,
-			required: false,
 			default: false
+		},
+		inputMask: {
+			type: String,
+			default: ''
 		}
 	},
 	data: function () {
@@ -55,7 +67,50 @@ export default {
 		}
 	},
 	computed: {
-		hasError() { },
+		hasError() {
+			if (this.required && this.value === '') {
+				this.setMessage('required')
+				return true
+			} else if (this.type === 'email' && !validateEmail(this.value)) {
+				this.setMessage('invalid')
+				return true
+			} else if (
+				this.inputMask !== '' &&
+				this.inputMask.length !== this.value.length
+			) {
+				this.setMessage('incomplete')
+				return true
+			} else return false
+		},
+		showError() {
+			return this.error && this.hasError
+		}
 	},
+	methods: {
+		setMessage(errorType) {
+			let fieldName = this.label
+			if (fieldName === 'Enter the address') fieldName = 'Address' // Exception label
+
+			const ERROR = [
+				{
+					code: 'required',
+					message: `${fieldName} cannot be empty`,
+				},
+				{
+					code: 'invalid',
+					message: `${fieldName} is not valid`,
+				},
+				{
+					code: 'incomplete',
+					message: `${fieldName} requires ${
+						this.inputMask.replace(/[^#]/g, '').length
+					} digits`
+				}
+			]
+
+			let errorIndex = ERROR.findIndex(err => err.code === errorType)
+			this.message = ERROR[errorIndex].message
+		}
+	}
 }
 </script>

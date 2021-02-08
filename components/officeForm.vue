@@ -1,13 +1,16 @@
 <template>
 	<form
-		@submit.prevent="onSubmit()"
+		@submit.prevent="onSubmit"
+		@keydown.enter.prevent.self=""
+		novalidate
 		class="w-full bg-white rounded-lg shadow-md text-grayDark px-6 pt-4 pb-6 z-30"
 	>
 		<header class="flex justify-between mb-10">
 			<span class="font-bold"
-				>{{ form.id ? 'Edit' : 'New' }} Location</span>
+				>{{ isEditing ? 'Edit' : 'New' }} Location</span
+			>
 			<button @click.prevent="$emit('close')">
-				<Icon name="close" />
+				<Icon name="close" class="text-grayLight" />
 			</button>
 		</header>
 
@@ -50,6 +53,7 @@
 		/>
 
 		<InputField
+			type="email"
 			label="Email address"
 			v-model="form.contact.email"
 			ref="email"
@@ -64,6 +68,7 @@
 			v-model="form.contact.phone"
 			ref="phone"
 			placeholder="(XXX) XXX-XXXX"
+			input-mask="(###) ###-####"
 			:required="true"
 			:error="isSubmitted"
 		/>
@@ -71,7 +76,7 @@
 		<button
 			type="submit"
 			class="btn font-light"
-			:class="isValid ? 'bg-greenTurq' : 'bg-gray-400'"
+			:class="isValid() ? 'bg-greenTurq' : 'bg-gray-400'"
 		>
 			Save
 		</button>
@@ -79,6 +84,8 @@
 </template>
 
 <script>
+import { validateForm } from '@/helpers/validation'
+
 export default {
 	name: 'OfficeForm',
 	props: {
@@ -106,12 +113,16 @@ export default {
 					phone: ''
 				}
 			},
-			isSubmitted: false,
-			isValid: true
+			isSubmitted: false
+		}
+	},
+	computed: {
+		isEditing() {
+			return this.office && this.office.id
 		}
 	},
 	created() {
-		if (this.office && this.office.id) {
+		if (this.isEditing) {
 			this.form = {
 				...this.office,
 				contact: {
@@ -122,8 +133,18 @@ export default {
 	},
 	methods: {
 		onSubmit() {
-			console.log(this.form)
+			this.isSubmitted = true
+			if (!this.isValid()) return false
+
+			this.$store.dispatch('updateStore', {
+				...this.form
+			})
+
+			this.$emit('close')
 		},
+		isValid() {
+			return validateForm(this.$refs)
+		}
 	}
 }
 </script>

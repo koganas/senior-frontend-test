@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "nuxt": "^2.14.6",
-    "tailwindcss": "^1.8.10"
+    "tailwindcss": "^1.8.10",
+    "vue-the-mask": "^0.11.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.13",

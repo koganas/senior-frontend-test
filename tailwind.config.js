@@ -41,13 +41,13 @@ module.exports = {
 				0: '0'
 			},
 			inset: {
-				35: '35px'
+				'icon': '2.3rem'
+			},
+			padding: {
+				1.6: '0.407rem'
 			},
 			transitionProperty: {
 				maxHeight: 'max-height'
-			},
-			transitionDuration: {
-				5000: '5000ms'
 			}
 		}
 	},
