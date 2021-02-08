@@ -12,7 +12,7 @@
 			:ref="label"
 			class="transition-all duration-200 input border-grayDark outline-none"
 			:class="{
-				'focus:border-greenTurq': !hasError || !value,
+				'focus:border-greenTurq': !hasError || !error,
 				'border-pinkPanther': showError,
 				'text-base py-1.6': label === 'Title'
 			}"
