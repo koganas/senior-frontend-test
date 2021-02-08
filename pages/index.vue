@@ -1,12 +1,11 @@
 <template>
 	<div
-		class="flex justify-center w-full min-h-screen py-24 font-sans bg-gray-200"
+		class="flex justify-center w-full min-h-screen py-32 font-sans bg-gray-200"
 	>
-		<!-- TODO: AlertStatus -->
+		<AlertStatus />
 
 		<div class="flex flex-col w-80 items-center">
 			<h1 class="mb-2 text-6xl font-light text-greenTurq">Offices</h1>
-
 			<OfficeNew />
 
 			<OfficeCard
