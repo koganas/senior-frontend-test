@@ -71,8 +71,4 @@ body {
       @apply text-greenTurqLight outline-none
     }
   }
-
-  .feedback-bounce:focus .ico {
-    @apply animate-bounce
-  }
 }

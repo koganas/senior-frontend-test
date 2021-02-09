@@ -1,30 +1,28 @@
 <template>
 	<div
-		:class="{
-			'transition-all duration-500 relative flex items-center justify-between z-10 w-full min-h-26 px-6 py-4 shadow-lg cursor-pointer select-none': true,
-			'bg-white rounded-lg feedback-color': !open,
-			'bg-grayLight rounded-t-lg': open
-		}"
+		class="transition-all duration-500 border border-white relative flex items-center justify-between z-10 w-full min-h-26 px-6 py-4 shadow-lg cursor-pointer select-none outline-none"
+		:class="
+			open
+				? 'bg-grayLight border-grayLight rounded-t-lg focus:shadow-sm'
+				: 'bg-white rounded-lg'
+		"
 		:tabindex="0"
-		@click="$emit('clicked')"
-		@keydown.enter.prevent="$emit('clicked')"
+		@click.prevent="onClick"
+		@keydown.enter.prevent="onClick"
 	>
+		<!-- focus:border-greenTurqLight : !open -->
 		<header>
 			<h3
 				class="text-2xl transition-color duration-500 font-bold select-text max-w-fit"
-				:class="{
-					'text-grayDark truncate': !open,
-					'text-white break-words': open
-				}"
+				:class="
+					open ? 'text-white break-words' : 'text-grayDark truncate'
+				"
 			>
 				{{ office.title }}
 			</h3>
 			<address
 				class="font-light transition-color duration-500 select-text not-italic max-w-fit truncate"
-				:class="{
-					'text-grayLight': !open,
-					'text-white': open
-				}"
+				:class="open ? 'text-white' : 'text-grayLight'"
 			>
 				{{ office.address }}
 			</address>
@@ -33,10 +31,7 @@
 		<Icon
 			name="chevron"
 			class="transition-all duration-500 transform ico"
-			:class="{
-				'text-greenTurq': !open,
-				'text-white -rotate-180': open
-			}"
+			:class="open ? 'text-white -rotate-180' : 'text-greenTurq'"
 		/>
 	</div>
 </template>
@@ -47,6 +42,11 @@ export default {
 	props: {
 		office: Object,
 		open: Boolean
+	},
+	methods: {
+		onClick() {
+			this.$emit('clicked')
+		}
 	}
 }
 </script>

@@ -1,8 +1,7 @@
 <template>
 	<form
 		@submit.prevent="onSubmit"
-		@keydown.enter.prevent.self="onSubmit"
-		class="w-full bg-white rounded-lg shadow-md text-grayDark px-6 pt-4 pb-6"
+		class="w-full bg-white rounded-lg shadow-lg text-grayDark px-6 pt-4 pb-6"
 		novalidate
 	>
 		<header class="flex justify-between mb-10">

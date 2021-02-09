@@ -26,7 +26,7 @@
 			>
 				<button
 					@click.prevent="$emit('editing')"
-					class="btn-icon text-grayLight hover:text-gray-700"
+					class="btn-icon text-grayLight hover:text-gray-700 focus:text-gray-700"
 				>
 					<Icon name="pencil" class="mr-2" />
 					Edit
@@ -34,7 +34,7 @@
 
 				<button
 					@click.prevent="deleteOffice()"
-					class="btn-icon text-pinkPanther hover:text-red-500"
+					class="btn-icon text-pinkPanther hover:text-red-600 focus:text-red-600"
 				>
 					<Icon name="trash" class="mr-2" />
 					Delete

@@ -4,7 +4,7 @@
 			<button
 				v-if="!isAdding"
 				@click.prevent="isAdding = true"
-				class="flex justify-between w-full bg-greenTurq px-6 py-4 text-white font-thin rounded-lg shadow-lg feedback"
+				class="flex justify-between w-full bg-greenTurq px-6 py-4 text-white font-light rounded-lg shadow-lg feedback"
 			>
 				Add New Location
 				<Icon name="plus" />
