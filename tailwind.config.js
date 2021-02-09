@@ -80,5 +80,9 @@ module.exports = {
 				'text-pinkPanther'
 			]
 		}
+	},
+	future: {
+		removeDeprecatedGapUtilities: true,
+		purgeLayersByDefault: true
 	}
 }
