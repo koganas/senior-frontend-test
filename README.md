@@ -17,7 +17,7 @@ Basically this project consists in this set of features:
 To maintain acessibility using the keyboard, i've reviewed some css and pseudo elements behavior. Google Chrome sets some outlines that I believe it takes the expected design unity out of the interface. I've also used `tabindex` on a particular case where the html tag was not intended to user interactivity.
 
 #### Animations
-For most animations, I used class binding and tailwind styling. I've also done a simple fade transition component to achieve the expected behavior with cards/forms switching.
+For most animations, I used class binding and tailwind styling to keep the consistency of the app. I've also done a simple fade transition component to achieve the expected behavior with cards/forms switching.
 
 #### Validation
 As the most complex rules would come only from email and phone inputs, i've used a helper that contains:
@@ -25,7 +25,7 @@ As the most complex rules would come only from email and phone inputs, i've used
 - `validateForm` checks each form entry using the computed property `hasError`
 - `validateEmail` tests a string with a regular expression for emails.
 
-To verify length, I compared the `inputMask` prop with the field values. If there were more complex fields to validate, I would consider using [VeeValidate](https://vee-validate.logaretm.com/v3).
+To verify length, I compared the `inputMask` prop with the field values. If there were more complex fields to validate, I would consider using [VeeValidate](https://vee-validate.logaretm.com/v3), but I prefered "keeping it simple" as mentioned on the test.
 
 #### Tools
 - [Nuxt.js](https://github.com/nuxt/nuxt.js)

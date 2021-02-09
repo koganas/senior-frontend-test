@@ -1,17 +1,11 @@
 <template>
 	<div
-		:class="{
-			'transition-maxHeight duration-500 ease-in-out relative h-auto w-full overflow-y-hidden -mt-4 bg-white px-8 rounded-lg shadow-md': true,
-			'max-h-0': !open,
-			'max-h-fit': open
-		}"
+		class="transition-maxHeight duration-500 ease-in-out relative h-auto w-full overflow-y-hidden -mt-4 bg-white px-8 rounded-lg shadow-md"
+		:class="open ? 'max-h-fit' : 'max-h-0'"
 	>
 		<div
-			:class="{
-				'transition-opacity duration-700 leading-8 text-grayDark': true,
-				'opacity-0': !open,
-				'opacity-100': open
-			}"
+			class="transition-opacity duration-700 leading-8 text-grayDark"
+			:class="open ? 'opacity-100' : 'opacity-0'"
 		>
 			<h3 class="text-xl pt-10 font-bold">
 				{{ contact.name }}
