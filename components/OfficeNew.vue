@@ -3,7 +3,7 @@
 		<Fade>
 			<button
 				v-if="!isAdding"
-				@click.prevent="isAdding = true"
+				@click.prevent="onClick"
 				class="flex justify-between w-full bg-greenTurq px-6 py-4 text-gray-200 rounded-lg shadow-lg feedback"
 			>
 				Add New Location
@@ -21,6 +21,12 @@ export default {
 	data: () => {
 		return {
 			isAdding: false
+		}
+	},
+	methods: {
+		onClick() {
+			this.isAdding = true
+			this.$store.commit('HIDE_ALERT')
 		}
 	}
 }

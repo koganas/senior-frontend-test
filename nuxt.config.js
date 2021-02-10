@@ -27,8 +27,8 @@ export default {
 		link: [
 			{
 				rel: 'icon',
-				type: 'image/x-icon',
-				href: 'senior-frontend-test/favicon.ico'
+				type: 'image/png',
+				href: 'favicon.png'
 			},
 			{
 				rel: 'stylesheet',
