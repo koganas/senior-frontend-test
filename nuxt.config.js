@@ -1,6 +1,13 @@
 export default {
 	components: true,
 	target: 'static',
+	router: {
+		base: '/senior-frontend-test/'
+	},
+
+	generate: {
+		subFolders: true // HTML files are generated according to the route path
+	},
 
 	head: {
 		title: process.env.npm_package_name || '',
@@ -18,7 +25,11 @@ export default {
 			}
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+			{
+				rel: 'icon',
+				type: 'image/x-icon',
+				href: 'senior-frontend-test/favicon.ico'
+			},
 			{
 				rel: 'stylesheet',
 				href: 'https://use.typekit.net/bgi4bzm.css'

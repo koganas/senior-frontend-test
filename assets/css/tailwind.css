@@ -48,27 +48,21 @@ body {
     @apply outline-none
   }
 
-  .feedback { 
-    &:hover,
-    &:focus,
-    &:active {
-      @apply bg-greenTurqLight
-    }
+  .feedback:hover,
+  .feedback:focus,
+  .feedback:active {
+    @apply bg-greenTurqLight
   }
-
-  .feedback-error {
-    &:hover,
-    &:focus,
-    &:active {
-      @apply bg-pinkPanther
-    }
+  
+  .feedback-error:hover,
+  .feedback-error:focus,
+  .feedback-error:active {
+    @apply bg-pinkPanther
   }
-
-  .feedback-color {
-    &:hover,
-    &:focus,
-    &:active {
-      @apply text-greenTurqLight outline-none
-    }
+  
+  .feedback-color:hover,
+  .feedback-color:focus,
+  .feedback-color:active {
+    @apply text-greenTurqLight outline-none
   }
 }

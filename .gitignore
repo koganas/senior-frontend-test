@@ -6,4 +6,5 @@ node_modules
 
 # Build/dev files
 .nuxt
+dist
 yarn.lock
