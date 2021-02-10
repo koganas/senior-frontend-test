@@ -16,7 +16,7 @@ This project consists in this set of features:
 - *Fade* transition component
 
 ### 2. Accessibility
-To maintain accessibility using the keyboard, i've reviewed some css and pseudo elements behavior. Google Chrome sets some outlines that I believe it takes the expected design unity out of the interface. So i've made an [alternative](https://github.com/koganas/senior-frontend-test/commit/7925ecd636469dbc1a544a65ec7996474170414f) for the focus behavior that is not in the final results. You can check this version at the `/fix/outline-border-focus` branch.
+To maintain accessibility using the keyboard, i've reviewed some css and pseudo elements behavior. Google Chrome sets some outlines that I believe it takes the expected design unity out of the interface. So i've made an [alternative](https://github.com/koganas/senior-frontend-test/commit/7925ecd636469dbc1a544a65ec7996474170414f) for the focus behavior that is not in the final results. You can check this version at the [/fix/outline-border-focus](https://github.com/koganas/senior-frontend-test/tree/fix/outline-border-focus) branch.
 I've also used `tabindex` on a particular case where the html tag was not intended to user interactivity.
 
 ### 3. Animations
