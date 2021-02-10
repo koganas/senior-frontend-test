@@ -30,6 +30,16 @@ export const mutations = {
 
 export const actions = {
 	updateStore({ state, commit }, data) {
+		commit(
+			'SHOW_ALERT',
+			{
+				status: `The location has been ${
+					data.id ? 'updated' : 'added'
+				}.`,
+				show: true
+			},
+			{ root: true }
+		)
 		let list = []
 		if (data.id) {
 			const index = state.officeList.findIndex(
@@ -42,16 +52,6 @@ export const actions = {
 			list = [data, ...state.officeList]
 		}
 		commit('SET_OFFICES', list)
-		commit(
-			'SHOW_ALERT',
-			{
-				status: `The location has been ${
-					data.id ? 'updated' : 'added'
-				}.`,
-				show: true
-			},
-			{ root: true }
-		)
 	},
 
 	deleteStore({ state, commit }, officeId) {
