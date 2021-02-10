@@ -19,7 +19,7 @@
 				class="flex justify-between border-t border-gray-200 mt-2 pt-1 pb-2"
 			>
 				<button
-					@click.prevent="$emit('editing')"
+					@click.prevent="editOffice()"
 					class="btn-icon text-grayLight hover:text-gray-700 focus:text-gray-700"
 				>
 					<Icon name="pencil" class="mr-2" />
@@ -51,6 +51,10 @@ export default {
 		}
 	},
 	methods: {
+		editOffice() {
+			this.$store.commit('HIDE_ALERT')
+			this.$emit('editing')
+		},
 		deleteOffice() {
 			this.$store.dispatch('deleteStore', this.office.id)
 		}
