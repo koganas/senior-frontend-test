@@ -8,7 +8,7 @@ The purpose of this test is to recreate the design and functionality of a generi
 You can check the results here: https://koganas.github.io/senior-frontend-test/
 
 ### 1. Structure
-Basically this project consists in this set of features:
+This project consists in this set of features:
 - A simple Vuex store containing the `officeList` and `alert` initial states, mutations and actions. 
 - Main components: *OfficeNew*, *OfficeCard* and *OfficeForm*
 - *OfficeCard* child components: *CardHeader* and *CardDetails*
@@ -16,7 +16,8 @@ Basically this project consists in this set of features:
 - *Fade* transition component
 
 ### 2. Accessibility
-To maintain accessibility using the keyboard, i've reviewed some css and pseudo elements behavior. Google Chrome sets some outlines that I believe it takes the expected design unity out of the interface. I've also used `tabindex` on a particular case where the html tag was not intended to user interactivity.
+To maintain accessibility using the keyboard, i've reviewed some css and pseudo elements behavior. Google Chrome sets some outlines that I believe it takes the expected design unity out of the interface. So i've made an [alternative](https://github.com/koganas/senior-frontend-test/commit/7925ecd636469dbc1a544a65ec7996474170414f) for the focus behavior that is not in the final results. You can check this version at the `/fix/outline-border-focus` branch.
+I've also used `tabindex` on a particular case where the html tag was not intended to user interactivity.
 
 ### 3. Animations
 For most animations, I used class binding and tailwind styling to keep the consistency of the app. I've also done a simple fade transition component to achieve the expected behavior with cards/forms switching.
@@ -54,15 +55,15 @@ npm install
 ```
 
 ### Local development
-Server will run on http://localhost:3000/
 ```
 npm run dev
 ```
+Server will start at http://localhost:3000/senior-frontend-test/
 
 ### Deploy
-[gh-pages](https://github.com/tschaub/gh-pages) is used for this task. This command generate an updated version of the static files and push it to the `gh-pages` branch, which is served on github pages.
+[gh-pages](https://github.com/tschaub/gh-pages) is used for this task. This command generates an updated version of the static files and push it to the `gh-pages` branch, which is served on github pages.
 ```
 npm run deploy
 ```
 
-*You can also use [yarn](https://yarnpkg.com/getting-started/install) instead of npm for this tasks. For this case, you can change `npm run` just to `yarn`.
+*You can also use [yarn](https://yarnpkg.com/getting-started/install) instead of npm for this tasks. In this case, you can change `npm run` just to `yarn`.
