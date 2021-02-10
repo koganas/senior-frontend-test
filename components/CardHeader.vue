@@ -45,6 +45,7 @@ export default {
 	methods: {
 		onClick() {
 			this.$emit('clicked')
+			this.$store.commit('HIDE_ALERT')
 		}
 	}
 }

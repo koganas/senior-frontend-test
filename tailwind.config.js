@@ -42,7 +42,8 @@ module.exports = {
 				0: '0'
 			},
 			inset: {
-				icon: '2.3rem'
+				icon: '2.3rem',
+				'-100': '-100px'
 			},
 			padding: {
 				1.6: '0.407rem'
