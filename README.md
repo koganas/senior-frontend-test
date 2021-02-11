@@ -33,10 +33,13 @@ To verify length, I compared the `inputMask` prop with the field values. If ther
 ### 5. Tools
 - [Nuxt.js](https://github.com/nuxt/nuxt.js)
 - [Tailwind](https://github.com/tailwindlabs/tailwindcss)
-- [Heroicons](https://heroicons.com/) (svg)
 - [The Mask](https://github.com/vuejs-tips/vue-the-mask)
 
-### 6. Tasks list
+### 6. Assets
+- [Heroicons](https://heroicons.com/) (svg)
+- [Adobe Typekit](https://fonts.adobe.com/typekit) (Proxima Nova font)
+
+### 7. Tasks list
 1. Fork [test repository](https://github.com/dogandpony/senior-frontend-test).
 1. Recreate [the design](https://www.figma.com/file/VU2BJHrMmoSEdQmMa1EbYP/Front-end-Test?node-id=2253%3A2129) using [Vue.js](https://vuejs.org/) and [TailwindCSS](https://tailwindcss.com/)
 1. Populate the office listings from a datasource (JSON or hard-coded array)
@@ -58,7 +61,7 @@ npm install
 ```
 npm run dev
 ```
-Server will start at http://localhost:3000/senior-frontend-test/
+Server will start at http://localhost:3000/senior-frontend-test/, if port `:3000` is not been used.
 
 ### Deploy
 [gh-pages](https://github.com/tschaub/gh-pages) is used for this task. This command generates an updated version of the static files and push it to the `gh-pages` branch, which is served on github pages.
