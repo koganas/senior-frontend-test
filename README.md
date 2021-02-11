@@ -35,6 +35,7 @@ To verify length, I compared the `inputMask` prop with the field values. If ther
 - [Tailwind](https://github.com/tailwindlabs/tailwindcss)
 - [Heroicons](https://heroicons.com/) (svg)
 - [The Mask](https://github.com/vuejs-tips/vue-the-mask)
+- [Adobe Typekit - Proxima Nova font](https://fonts.adobe.com/typekit)
 
 ### 6. Tasks list
 1. Fork [test repository](https://github.com/dogandpony/senior-frontend-test).
@@ -58,7 +59,7 @@ npm install
 ```
 npm run dev
 ```
-Server will start at http://localhost:3000/senior-frontend-test/
+Server will start at http://localhost:3000/senior-frontend-test/, if port `:3000` is not been used.
 
 ### Deploy
 [gh-pages](https://github.com/tschaub/gh-pages) is used for this task. This command generates an updated version of the static files and push it to the `gh-pages` branch, which is served on github pages.
