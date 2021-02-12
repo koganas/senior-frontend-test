@@ -1,7 +1,11 @@
 <template>
 	<div
-		class="transition-all duration-500 relative flex items-center justify-between z-10 w-full min-h-26 px-6 py-4 shadow-lg cursor-pointer select-none outline-none"
-		:class="open ? 'bg-grayLight rounded-t-lg' : 'bg-white rounded-lg'"
+		class="transition-all duration-500 relative border flex items-center justify-between z-10 w-full min-h-26 px-6 py-4 shadow-lg cursor-pointer select-none outline-none"
+		:class="
+			open
+				? 'bg-grayLight border-grayLight rounded-t-lg'
+				: 'bg-white rounded-lg border-white focus:border-greenTurq'
+		"
 		:tabindex="0"
 		@click.prevent="onClick"
 		@keydown.enter.prevent="onClick"
